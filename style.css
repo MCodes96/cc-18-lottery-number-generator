@@ -49,3 +49,16 @@ body {
     border-color: green;
   }
 }
+
+/* INPUT */
+#user-input {
+  background-color: red;
+}
+
+input {
+  border: none;
+  background-color: rgb(21, 20, 20);
+  color: green;
+  margin-top: 5rem;
+  margin: 5rem auto 0;
+}
