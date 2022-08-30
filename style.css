@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: green;
+  font-family: monospace;
+}
+
+body {
+  background-color: rgb(21, 20, 20);
+  font-size: 26px;
+}
+
+#prompt {
+  margin-top: 6rem;
+  width: 90%;
+}
