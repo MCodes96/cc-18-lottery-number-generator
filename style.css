@@ -7,8 +7,13 @@
 }
 
 body {
-  background-color: rgb(21, 20, 20);
+  background-color: rgb(26, 26, 26);
   font-size: 26px;
+}
+
+main {
+  display: flex;
+  flex-flow: column;
 }
 
 /* PROMPT SECTION */
@@ -53,12 +58,15 @@ body {
 /* INPUT */
 #user-input {
   background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15rem;
 }
 
 input {
   border: none;
-  background-color: rgb(21, 20, 20);
+  background-color: rgb(26, 26, 26);
   color: green;
-  margin-top: 5rem;
-  margin: 5rem auto 0;
+  margin: 1rem;
 }
