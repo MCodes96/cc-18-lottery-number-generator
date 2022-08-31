@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lottery Number Generator</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="main.js" defer></script>
+    <script src="/Mixed_Messages_Portfolio_Project/main.js"></script>
   </head>
 
   <!-- BODY -->
@@ -38,9 +38,14 @@
 
       <!-- USER INPUT SECTION -->
       <section id="user-input">
-        <input type="text" name="first-name" id="first-name" />
+        <input type="text" name="firstName" id="firstName" />
+        <input type="submit" id="submitMe" value="test" />
         <input type="text" name="last-name" id="last-name" />
-        <select name="user-color" id="user-color"></select>
+        <select name="userColor" id="userColor">
+          <option>Red</option>
+          <option>Blue</option>
+          <option>Green</option>
+        </select>
         <input type="number" name="user-number" id="user-number" />
         <input type="text" name="user-birthyear" id="user-birthyear" />
         <select name="user-eyes" id="user-eyes"></select>
@@ -48,3 +53,104 @@
     </main>
   </body>
 </html>
+
+<!--THIS SECTION IS PAT'S TEST CODE DO NOT DELETE - JS CODE IS BASED UPON ID'S IN THIS CODE
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Mixed Message</title>
+  </head>
+  <body>
+    <h1>Test Page</h1>
+    <label for="firstName">First Name</label>
+    <input type="text" name="firstName" id="firstName" />
+    <br />
+    <label for="lastName">Last Name</label>
+    <input type="text" name="lastName" id="lastName" />
+    <br />
+    <label for="userColor">User Color</label>
+    <select name="userColor" id="userColor">
+      <option>Red</option>
+      <option>Blue</option>
+      <option>Green</option>
+    </select>
+    <br />
+    <label for="userNumber">User Number</label>
+    <input type="number" name="userNumber" id="userNumber" />
+    <br />
+    <label for="userBirthyear">Year of Birth</label>
+    <input type="number" name="userBirthyear" id="userBirthyear" />
+    <br />
+    <label for="userEyes">Eye Color</label>
+    <select name="userEyes" id="userEyes">
+      <option>Blue</option>
+      <option>Green</option>
+      <option>Brown</option>
+      <option>Hazel</option>
+    </select>
+    <div id="lotteryNumber"></div>
+
+    <script>
+      let firstNumber = "";
+      let secondNumber = "";
+      let thirdNumber = "";
+      let fourthNumber = "";
+      let fifthNumber = "";
+      let sixthNumber = "";
+
+      function randomNumber(value) {
+        return Math.floor(Math.random() * value);
+      }
+
+      const numberOne = () => {
+        let x = document.getElementById("firstName").value;
+        let firstNumber = x.charCodeAt(0);
+        return firstNumber;
+      };
+
+      const numberTwo = () => {
+        //set min and max for index position based on string length
+        let x = document.getElementById("lastName").value;
+        let index = Math.floor(Math.random() * x.length + 1);
+        let secondNumber = x.charCodeAt(index);
+        return secondNumber;
+      };
+
+      const numberThree = () => {
+        let multiplier = 0;
+        let color = document.getElementById("userColor").value;
+        switch (color) {
+          case "Red":
+            multiplier = 45;
+            break;
+          case "Blue":
+            multiplier = 128;
+            break;
+          case "Green":
+            multiplier = 239;
+            break;
+        }
+        thirdNumber = randomNumber(multiplier);
+        return thirdNumber;
+      };
+
+      function generateLotteryNumber() {
+        firstNumber = numberOne();
+        secondNumber = numberTwo();
+        thirdNumber = numberThree();
+        let message = document.getElementById("lotteryNumber");
+        message.innerHTML = `Your Lucky Lottery Numbers Are<br>${firstNumber} - ${secondNumber} - ${thirdNumber} - ${fourthNumber} - ${fifthNumber} - ${sixthNumber}`;
+      }
+
+      const userPickedColor = document.getElementById("userColor");
+      userPickedColor.addEventListener("change", numberThree);
+    </script>
+  </body>
+</html>
+
+
+-->
