@@ -1,7 +1,7 @@
 /******************************
  * THIS SECTION OF CODE IS WORKING
- * COMMENTED CODE BELOW THIS SECTION
- * IS NOTES AND CODE NOT USED YET
+ * BUT NEED TO ADD IN CHECKS TO MAKE SURE
+ * NUMBERS RETURNED ARE BETWEEN 1-70
  *
  *******************************/
 let firstNumber = "";
@@ -62,11 +62,6 @@ const numberFive = () => {
     year = (year - digit) / 10;
     return fifthNumber;
   }
-  // for (let i = 0; i < year.length; i++) {
-  //   let total = year[i];
-  //   total += parseInt(year[i], 10);
-  //   console.log(total);
-  // }
 };
 
 function generateLotteryNumber() {
