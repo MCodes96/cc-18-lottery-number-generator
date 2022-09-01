@@ -48,7 +48,8 @@ const numberThree = () => {
 };
 
 const numberFour = (min, max) => {
-  fourthNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  let userNumber = document.getElementById("userNumber").value;
+  fourthNumber = Math.floor(Math.random() * (max - min + 1) + min) * userNumber;
   return fourthNumber;
 };
 
