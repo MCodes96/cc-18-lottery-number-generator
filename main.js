@@ -76,4 +76,4 @@ function generateLotteryNumber() {
 }
 
 const userPickedColor = document.getElementById('userColor');
-userPickedColor.addEventListener('change', numberThree);
+userPickedColor.addEventListener('change', numberThree());

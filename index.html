@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lottery Number Generator</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="/Mixed_Messages_Portfolio_Project/main.js"></script>
+    <script src="/main.js"></script>
   </head>
 
   <!-- BODY -->
@@ -38,17 +38,32 @@
 
       <!-- USER INPUT SECTION -->
       <section id="user-input">
+        <label for="firstName">First Name</label>
         <input type="text" name="firstName" id="firstName" />
-        <input type="submit" id="submitMe" value="test" />
-        <input type="text" name="last-name" id="last-name" />
+        <br />
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" id="lastName" />
+        <br />
+        <label for="userColor">User Color</label>
         <select name="userColor" id="userColor">
           <option>Red</option>
           <option>Blue</option>
           <option>Green</option>
         </select>
-        <input type="number" name="user-number" id="user-number" />
-        <input type="text" name="user-birthyear" id="user-birthyear" />
-        <select name="user-eyes" id="user-eyes"></select>
+        <br />
+        <label for="userNumber">User Number</label>
+        <input type="number" name="userNumber" id="userNumber" />
+        <br />
+        <label for="userBirthyear">Year of Birth</label>
+        <input type="number" name="userBirthyear" id="userBirthyear" />
+        <br />
+        <label for="userEyes">Eye Color</label>
+        <select name="userEyes" id="userEyes">
+          <option>Blue</option>
+          <option>Green</option>
+          <option>Brown</option>
+          <option>Hazel</option>
+        </select>
       </section>
     </main>
   </body>

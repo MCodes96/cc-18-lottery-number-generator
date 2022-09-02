@@ -70,3 +70,8 @@ input {
   color: green;
   margin: 1rem;
 }
+
+#user-input {
+  display: flex;
+  flex-direction: column;
+}
