@@ -5,6 +5,31 @@ let fourthNumber = "";
 let fifthNumber = "";
 let sixthNumber = "";
 
+//window onload - run a function that shows div prompt1....then wait x seconds, hide that div and run div prompt2
+
+const showPrompts = async () => {
+  const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+  document.getElementById("prompt1").style.display = "block";
+  await delay(4000);
+  document.getElementById("prompt1").style.display = "none";
+  document.getElementById("prompt2").style.display = "block";
+  await delay(4000);
+  document.getElementById("prompt2").style.display = "none";
+  document.getElementById("prompt3").style.display = "block";
+  await delay(4000);
+  document.getElementById("prompt3").style.display = "none";
+  document.getElementById("prompt4").style.display = "block";
+  await delay(4000);
+  document.getElementById("prompt4").style.display = "none";
+  document.getElementById("prompt5").style.display = "block";
+  await delay(4000);
+  document.getElementById("prompt5").style.display = "none";
+  document.getElementById("prompt6").style.display = "block";
+  await delay(4000);
+  document.getElementById("prompt6").style.display = "none";
+  document.getElementById("userInputs").style.display = "block";
+};
+
 function randomNumber(value) {
   return Math.floor(Math.random() * value);
 }
@@ -85,8 +110,10 @@ function generateLotteryNumber() {
   sixthNumber = 70;
   console.log(sixthNumber);
   let message = document.getElementById("lotteryNumber");
+  message.style.display = "block";
   message.innerHTML = `Your Lucky Lottery Numbers Are<br>${firstNumber} - ${secondNumber} - ${thirdNumber} - ${fourthNumber} - ${fifthNumber} - ${sixthNumber}`;
 }
 
-const userPickedColor = document.getElementById("userColor");
-userPickedColor.addEventListener("change", numberThree);
+window.onload = () => {
+  showPrompts();
+};

@@ -14,56 +14,60 @@
     <main>
       <!-- PROMPT SECTION -->
       <section id="prompt">
-        <div class="typewriter">
+        <div class="typewriter" id="prompt1">
           // This is the governments secret lottery number generator.
         </div>
-        <div class="typewriter">
+        <div class="typewriter" id="prompt2">
           // You really thought the lottery numbers were random, huh? Cute...
         </div>
-        <div class="typewriter">
+        <div class="typewriter" id="prompt3">
           // The governments chooses the winning numbers before they're
           “randomly” drawn.
         </div>
-        <div class="typewriter">
+        <div class="typewriter" id="prompt4">
           // And there's a way to use this system to our advantage...
         </div>
-        <div class="typewriter">
+        <div class="typewriter" id="prompt5">
           // Congratulations, you're a future lottery winner! I'd let you choose
           the numbers that you want to win but that's too easy.
         </div>
-        <div class="typewriter">
+        <div class="typewriter" id="prompt6">
           // Let's find some meaningful numbers for our future millionaire. ;)
         </div>
       </section>
 
       <!-- USER INPUT SECTION -->
       <section id="user-input">
-        <label for="firstName">First Name</label>
-        <input type="text" name="firstName" id="firstName" />
-        <br />
-        <label for="lastName">Last Name</label>
-        <input type="text" name="lastName" id="lastName" />
-        <br />
-        <label for="userColor">User Color</label>
-        <select name="userColor" id="userColor">
-          <option>Red</option>
-          <option>Blue</option>
-          <option>Green</option>
-        </select>
-        <br />
-        <label for="userNumber">User Number</label>
-        <input type="number" name="userNumber" id="userNumber" />
-        <br />
-        <label for="userBirthyear">Year of Birth</label>
-        <input type="number" name="userBirthyear" id="userBirthyear" />
-        <br />
-        <label for="userEyes">Eye Color</label>
-        <select name="userEyes" id="userEyes">
-          <option>Blue</option>
-          <option>Green</option>
-          <option>Brown</option>
-          <option>Hazel</option>
-        </select>
+        <form id="userInputs">
+          <p>Tell me a little bit about yourself...</p>
+          <label for="firstName">First Name</label>
+          <input type="text" name="firstName" id="firstName" />
+          <br />
+          <label for="lastName">Last Name</label>
+          <input type="text" name="lastName" id="lastName" />
+          <br />
+          <label for="userColor">User Color</label>
+          <select name="userColor" id="userColor">
+            <option>Red</option>
+            <option>Blue</option>
+            <option>Green</option>
+          </select>
+          <br />
+          <label for="userNumber">User Number</label>
+          <input type="number" name="userNumber" id="userNumber" />
+          <br />
+          <label for="userBirthyear">Year of Birth</label>
+          <input type="number" name="userBirthyear" id="userBirthyear" />
+          <br />
+          <label for="userEyes">Eye Color</label>
+          <select name="userEyes" id="userEyes">
+            <option>Blue</option>
+            <option>Green</option>
+            <option>Brown</option>
+            <option>Hazel</option>
+          </select>
+          <br />
+        </form>
       </section>
       <div id="lotteryNumber"></div>
     </main>

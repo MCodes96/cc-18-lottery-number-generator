@@ -55,9 +55,17 @@ main {
   }
 }
 
+div.typewriter {
+  display: none;
+}
+
 /* INPUT */
+#userInputs {
+  display: none;
+}
+
 #user-input {
-  background-color: crimson;
+  /* background-color: crimson; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,6 +85,15 @@ input {
   padding-bottom: 50px;
 }
 
+#lotterySubmit {
+  background-color: green;
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
 #lotteryNumber {
+  display: none;
   margin: 30px auto;
 }
