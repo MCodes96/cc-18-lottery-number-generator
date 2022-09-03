@@ -40,33 +40,49 @@
       <section id="user-input">
         <form id="userInputs">
           <p>Tell me a little bit about yourself...</p>
-          <label for="firstName">First Name</label>
-          <input type="text" name="firstName" id="firstName" />
           <br />
-          <label for="lastName">Last Name</label>
-          <input type="text" name="lastName" id="lastName" />
+          <div class="input-pair">
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName" id="firstName" />
+          </div>
           <br />
-          <label for="userColor">User Color</label>
-          <select name="userColor" id="userColor">
-            <option>Red</option>
-            <option>Blue</option>
-            <option>Green</option>
-          </select>
+          <div class="input-pair">
+            <label for="lastName">Last Name</label>
+            <input type="text" name="lastName" id="lastName" />
+          </div>
           <br />
-          <label for="userNumber">User Number</label>
-          <input type="number" name="userNumber" id="userNumber" />
+          <div class="input-pair">
+            <label for="userColor">Favorite Color</label>
+            <select name="userColor" id="userColor">
+              <option>Red</option>
+              <option>Blue</option>
+              <option>Green</option>
+            </select>
+          </div>
           <br />
-          <label for="userBirthyear">Year of Birth</label>
-          <input type="number" name="userBirthyear" id="userBirthyear" />
+          <div class="input-pair">
+            <label for="userNumber">Favorite Number</label>
+            <input type="number" name="userNumber" id="userNumber" />
+          </div>
           <br />
-          <label for="userEyes">Eye Color</label>
-          <select name="userEyes" id="userEyes">
-            <option>Blue</option>
-            <option>Green</option>
-            <option>Brown</option>
-            <option>Hazel</option>
-          </select>
+          <div class="input-pair">
+            <label for="userBirthyear">Year of Birth</label>
+            <input type="number" name="userBirthyear" id="userBirthyear" />
+          </div>
           <br />
+          <div class="input-pair">
+            <label for="userEyes">Eye Color</label>
+            <select name="userEyes" id="userEyes">
+              <option>Blue</option>
+              <option>Green</option>
+              <option>Brown</option>
+              <option>Hazel</option>
+            </select>
+          </div>
+          <br />
+          <div class="center">
+            <input id="lotterySubmit" type="button" value="Submit" />
+          </div>
         </form>
       </section>
       <div id="lotteryNumber"></div>

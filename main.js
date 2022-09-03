@@ -1,75 +1,82 @@
-let firstNumber = "";
-let secondNumber = "";
-let thirdNumber = "";
-let fourthNumber = "";
-let fifthNumber = "";
-let sixthNumber = "";
+let firstNumber = '';
+let secondNumber = '';
+let thirdNumber = '';
+let fourthNumber = '';
+let fifthNumber = '';
+let sixthNumber = '';
 
 //window onload - run a function that shows div prompt1....then wait x seconds, hide that div and run div prompt2
 
 const showPrompts = async () => {
   const delay = (ms) => new Promise((res) => setTimeout(res, ms));
-  document.getElementById("prompt1").style.display = "block";
+  document.getElementById('prompt1').style.display = 'block';
   await delay(4000);
-  document.getElementById("prompt1").style.display = "none";
-  document.getElementById("prompt2").style.display = "block";
+  document.getElementById('prompt1').style.display = 'none';
+  document.getElementById('prompt2').style.display = 'block';
   await delay(4000);
-  document.getElementById("prompt2").style.display = "none";
-  document.getElementById("prompt3").style.display = "block";
+  document.getElementById('prompt2').style.display = 'none';
+  document.getElementById('prompt3').style.display = 'block';
   await delay(4000);
-  document.getElementById("prompt3").style.display = "none";
-  document.getElementById("prompt4").style.display = "block";
+  document.getElementById('prompt3').style.display = 'none';
+  document.getElementById('prompt4').style.display = 'block';
   await delay(4000);
-  document.getElementById("prompt4").style.display = "none";
-  document.getElementById("prompt5").style.display = "block";
+  document.getElementById('prompt4').style.display = 'none';
+  document.getElementById('prompt5').style.display = 'block';
   await delay(4000);
-  document.getElementById("prompt5").style.display = "none";
-  document.getElementById("prompt6").style.display = "block";
+  document.getElementById('prompt5').style.display = 'none';
+  document.getElementById('prompt6').style.display = 'block';
   await delay(4000);
-  document.getElementById("prompt6").style.display = "none";
-  document.getElementById("userInputs").style.display = "block";
+  document.getElementById('prompt6').style.display = 'none';
+  document.getElementById('userInputs').style.display = 'block';
 };
 
 function randomNumber(value) {
   return Math.floor(Math.random() * value);
 }
 
+function verifyNumber(num) {
+  while (num > 70) {
+    num = Math.floor(num / 2);
+  }
+  return num;
+}
+
 const numberOne = () => {
-  let x = document.getElementById("firstName").value;
+  let x = document.getElementById('firstName').value;
   let firstNumber = x.charCodeAt(0);
-  return firstNumber;
+  return verifyNumber(firstNumber);
 };
 
 const numberTwo = () => {
   //set min and max for index position based on string length
-  let x = document.getElementById("lastName").value;
-  let index = Math.floor(Math.random() * x.length + 1);
+  let x = document.getElementById('lastName').value;
+  let index = Math.floor(Math.random() * x.length);
   let secondNumber = x.charCodeAt(index);
-  return Number(secondNumber);
+  return Number(verifyNumber(secondNumber));
 };
 
 const numberThree = () => {
   let multiplier = 0;
-  let color = document.getElementById("userColor").value;
+  let color = document.getElementById('userColor').value;
   switch (color) {
-    case "Red":
+    case 'Red':
       multiplier = 45;
       break;
-    case "Blue":
+    case 'Blue':
       multiplier = 128;
       break;
-    case "Green":
+    case 'Green':
       multiplier = 239;
       break;
   }
   thirdNumber = randomNumber(multiplier);
-  return thirdNumber;
+  return verifyNumber(thirdNumber);
 };
 
 const numberFour = () => {
-  let userNumber = document.getElementById("userNumber").value;
+  let userNumber = document.getElementById('userNumber').value;
   fourthNumber = randomNumber(userNumber);
-  return fourthNumber;
+  return verifyNumber(fourthNumber);
 };
 
 // const numberFour = (min, max) => {
@@ -81,14 +88,19 @@ const numberFour = () => {
 
 const numberFive = () => {
   //birthyear - lets add numbers together  ie. 1+9+7+4
-  let year = document.getElementById("userBirthyear").value;
+  let year = document.getElementById('userBirthyear').value.toString();
   let fifthNumber = 0;
-  while (year) {
-    digit = year % 10;
-    fifthNumber += digit;
-    year = (year - digit) / 10;
-    return fifthNumber;
+  for (let i = 0; i < year.length; i++) {
+    fifthNumber += year[i];
   }
+  return verifyNumber(fifthNumber);
+  // while (year) {
+  //   digit = year % 10;
+  //   fifthNumber += digit;
+  //   year = (year - digit) / 10;
+  //   return verifyNumber(fifthNumber);
+  // }
+
   // for (let i = 0; i < year.length; i++) {
   //   let total = year[i];
   //   total += parseInt(year[i], 10);
@@ -109,11 +121,15 @@ function generateLotteryNumber() {
   console.log(fifthNumber);
   sixthNumber = 70;
   console.log(sixthNumber);
-  let message = document.getElementById("lotteryNumber");
-  message.style.display = "block";
+  let message = document.getElementById('lotteryNumber');
+  message.style.display = 'block';
   message.innerHTML = `Your Lucky Lottery Numbers Are<br>${firstNumber} - ${secondNumber} - ${thirdNumber} - ${fourthNumber} - ${fifthNumber} - ${sixthNumber}`;
+  window.scrollTo(0, document.body.scrollHeight);
 }
 
 window.onload = () => {
   showPrompts();
 };
+
+const submitBtn = document.getElementById('lotterySubmit');
+submitBtn.addEventListener('click', generateLotteryNumber);
