@@ -79,33 +79,14 @@ const numberFour = () => {
   return verifyNumber(fourthNumber);
 };
 
-// const numberFour = (min, max) => {
-//   let userNumber = document.getElementById("userNumber").value;
-//   fourthNumber = Math.floor(Math.random() * (max - min + 1) + min) * userNumber;
-//   //console.log(typeof fourthNumber);
-//   return Number(fourthNumber);
-// };
-
 const numberFive = () => {
-  //birthyear - lets add numbers together  ie. 1+9+7+4
+  //birthyear - add numbers together  ie. 1+9+7+4
   let year = document.getElementById('userBirthyear').value.toString();
   let fifthNumber = 0;
   for (let i = 0; i < year.length; i++) {
-    fifthNumber += year[i];
+    fifthNumber += parseInt(year[i]);
   }
   return verifyNumber(fifthNumber);
-  // while (year) {
-  //   digit = year % 10;
-  //   fifthNumber += digit;
-  //   year = (year - digit) / 10;
-  //   return verifyNumber(fifthNumber);
-  // }
-
-  // for (let i = 0; i < year.length; i++) {
-  //   let total = year[i];
-  //   total += parseInt(year[i], 10);
-  //   console.log(total);
-  // }
 };
 
 function generateLotteryNumber() {
