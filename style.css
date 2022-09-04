@@ -135,4 +135,5 @@ input:-webkit-autofill {
 #lotteryNumber {
   display: none;
   margin: 0 auto 3rem;
+  text-align: center;
 }
