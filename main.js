@@ -1,42 +1,21 @@
 //window onload - run a function that shows div prompt1....then wait x seconds, hide that div and run div prompt2
 
-const showPrompts = async () => {
+async function displayPrompt() {
   const delay = (ms) => new Promise((res) => setTimeout(res, ms));
-  document.getElementById('prompt1').style.display = 'block';
-  await delay(4000);
-  document.getElementById('prompt1').style.display = 'none';
-  document.getElementById('prompt2').style.display = 'block';
-  await delay(4000);
-  document.getElementById('prompt2').style.display = 'none';
-  document.getElementById('prompt3').style.display = 'block';
-  await delay(4000);
-  document.getElementById('prompt3').style.display = 'none';
-  document.getElementById('prompt4').style.display = 'block';
-  await delay(4000);
-  document.getElementById('prompt4').style.display = 'none';
-  document.getElementById('prompt5').style.display = 'block';
-  await delay(4000);
-  document.getElementById('prompt5').style.display = 'none';
-  document.getElementById('prompt6').style.display = 'block';
-  await delay(4000);
-  document.getElementById('prompt6').style.display = 'none';
-  document.getElementById('userInputs').style.display = 'block';
-};
-// WORK IN PROGRESS
-// const delay = (ms) => new Promise((res) => setTimeout(res, ms));
-
-// function displayPrompt() {
-//   for (let i = 1; i <= 6; i++) {
-//     if (i === 1) {
-//       document.getElementById(`prompt${i}`).style.display = 'block';
-//       await delay(4000);
-//     } else if (i < 6) {
-//       document.getElementById('prompt1').style.display = 'none';
-//       document.getElementById('prompt2').style.display = 'block';
-//       await delay(4000);
-//     }
-//   }
-// }
+  for (let i = 0; i <= 6; i++) {
+    if (i === 0) {
+      document.getElementById(`prompt${i + 1}`).style.display = 'block';
+      await delay(4000);
+    } else if (i < 6) {
+      document.getElementById(`prompt${i}`).style.display = 'none';
+      document.getElementById(`prompt${i + 1}`).style.display = 'block';
+      await delay(4000);
+    } else if (i === 6) {
+      document.getElementById(`prompt${i}`).style.display = 'none';
+      document.getElementById('userInputs').style.display = 'block';
+    }
+  }
+}
 
 function randomNumber(value) {
   return Math.floor(Math.random() * value);
@@ -139,7 +118,7 @@ function generateLotteryNumber() {
 }
 
 window.onload = () => {
-  showPrompts();
+  displayPrompt();
 };
 
 const submitBtn = document.getElementById('lotterySubmit');
