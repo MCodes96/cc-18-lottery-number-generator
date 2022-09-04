@@ -1,10 +1,3 @@
-let firstNumber = '';
-let secondNumber = '';
-let thirdNumber = '';
-let fourthNumber = '';
-let fifthNumber = '';
-let sixthNumber = '';
-
 //window onload - run a function that shows div prompt1....then wait x seconds, hide that div and run div prompt2
 
 const showPrompts = async () => {
@@ -29,30 +22,46 @@ const showPrompts = async () => {
   document.getElementById('prompt6').style.display = 'none';
   document.getElementById('userInputs').style.display = 'block';
 };
+// WORK IN PROGRESS
+// const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
+// function displayPrompt() {
+//   for (let i = 1; i <= 6; i++) {
+//     if (i === 1) {
+//       document.getElementById(`prompt${i}`).style.display = 'block';
+//       await delay(4000);
+//     } else if (i < 6) {
+//       document.getElementById('prompt1').style.display = 'none';
+//       document.getElementById('prompt2').style.display = 'block';
+//       await delay(4000);
+//     }
+//   }
+// }
 
 function randomNumber(value) {
   return Math.floor(Math.random() * value);
 }
 
+// Make sure number is between 1 - 70
 function verifyNumber(num) {
-  while (num > 70) {
+  while (num > 69) {
     num = Math.floor(num / 2);
   }
-  return num;
+  return num + 1;
 }
 
 const numberOne = () => {
   let x = document.getElementById('firstName').value;
-  let firstNumber = x.charCodeAt(0);
-  return verifyNumber(firstNumber);
+  let num = x.charCodeAt(0);
+  return verifyNumber(num);
 };
 
 const numberTwo = () => {
   //set min and max for index position based on string length
   let x = document.getElementById('lastName').value;
   let index = Math.floor(Math.random() * x.length);
-  let secondNumber = x.charCodeAt(index);
-  return Number(verifyNumber(secondNumber));
+  let num = x.charCodeAt(index);
+  return verifyNumber(num);
 };
 
 const numberThree = () => {
@@ -69,38 +78,59 @@ const numberThree = () => {
       multiplier = 239;
       break;
   }
-  thirdNumber = randomNumber(multiplier);
-  return verifyNumber(thirdNumber);
+  let num = randomNumber(multiplier);
+  return verifyNumber(num);
 };
 
 const numberFour = () => {
   let userNumber = document.getElementById('userNumber').value;
-  fourthNumber = randomNumber(userNumber);
-  return verifyNumber(fourthNumber);
+  let num = randomNumber(userNumber);
+  return verifyNumber(num);
 };
 
 const numberFive = () => {
   //birthyear - add numbers together  ie. 1+9+7+4
   let year = document.getElementById('userBirthyear').value.toString();
-  let fifthNumber = 0;
+  let num = 0;
   for (let i = 0; i < year.length; i++) {
-    fifthNumber += parseInt(year[i]);
+    num += parseInt(year[i]);
   }
-  return verifyNumber(fifthNumber);
+  return verifyNumber(num);
+};
+
+const numberSix = () => {
+  let multiplier = 0;
+  let color = document.getElementById('userEyes').value;
+  switch (color) {
+    case 'Brown':
+      multiplier = 37;
+      break;
+    case 'Blue':
+      multiplier = 185;
+      break;
+    case 'Green':
+      multiplier = 49;
+      break;
+    case 'Hazel':
+      multiplier = 87;
+      break;
+  }
+  let num = randomNumber(multiplier);
+  return verifyNumber(num);
 };
 
 function generateLotteryNumber() {
-  firstNumber = numberOne();
+  let firstNumber = numberOne();
   console.log(firstNumber);
-  secondNumber = numberTwo();
+  let secondNumber = numberTwo();
   console.log(secondNumber);
-  thirdNumber = numberThree();
+  let thirdNumber = numberThree();
   console.log(thirdNumber);
-  fourthNumber = numberFour();
+  let fourthNumber = numberFour();
   console.log(fourthNumber);
-  fifthNumber = numberFive();
+  let fifthNumber = numberFive();
   console.log(fifthNumber);
-  sixthNumber = 70;
+  let sixthNumber = numberSix();
   console.log(sixthNumber);
   let message = document.getElementById('lotteryNumber');
   message.style.display = 'block';
