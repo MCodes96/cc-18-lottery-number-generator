@@ -1,4 +1,5 @@
-//window onload - run a function that shows div prompt1....then wait x seconds, hide that div and run div prompt2
+// window onload - run a function that displays div prompt1...
+// then wait x seconds, hide that div and display div prompt2
 
 async function displayPrompt() {
   const delay = (ms) => new Promise((res) => setTimeout(res, ms));
@@ -36,7 +37,7 @@ const numberOne = () => {
 };
 
 const numberTwo = () => {
-  //set min and max for index position based on string length
+  //set min and max for index based on string length
   let x = document.getElementById('lastName').value;
   let index = Math.floor(Math.random() * x.length);
   let num = x.charCodeAt(index);
