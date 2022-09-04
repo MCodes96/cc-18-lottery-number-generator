@@ -112,9 +112,14 @@ function generateLotteryNumber() {
   console.log(fifthNumber);
   let sixthNumber = numberSix();
   console.log(sixthNumber);
+
+  let numbers = `Your Lucky Lottery Numbers Are<br>${firstNumber} - ${secondNumber} - ${thirdNumber} - ${fourthNumber} - ${fifthNumber} - ${sixthNumber}`;
+  if (numbers.includes('NaN')) {
+    numbers = 'Fill out all fields correctly!';
+  }
   let message = document.getElementById('lotteryNumber');
   message.style.display = 'block';
-  message.innerHTML = `Your Lucky Lottery Numbers Are<br>${firstNumber} - ${secondNumber} - ${thirdNumber} - ${fourthNumber} - ${fifthNumber} - ${sixthNumber}`;
+  message.innerHTML = numbers;
   window.scrollTo(0, document.body.scrollHeight);
 }
 
