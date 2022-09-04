@@ -104,6 +104,19 @@ select {
   padding-bottom: 50px;
 }
 
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px rgb(26, 26, 26) inset !important;
+}
+
+/*Change text in autofill textbox*/
+input:-webkit-autofill {
+  -webkit-text-fill-color: green !important;
+}
+
 #lotterySubmit {
   padding: 10px 15px;
   border: 2px solid green;
