@@ -64,7 +64,7 @@ const numberThree = () => {
 
 const numberFour = () => {
   let userNumber = document.getElementById('userNumber').value;
-  let num = randomNumber(userNumber);
+  let num = Math.abs(randomNumber(userNumber));
   return verifyNumber(num);
 };
 
