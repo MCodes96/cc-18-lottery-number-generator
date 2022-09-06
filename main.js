@@ -100,17 +100,19 @@ const numberSix = () => {
 };
 
 function generateLotteryNumber() {
-  let firstNumber = numberOne();
+  let firstNumber;
+  let secondNumber;
+  let thirdNumber;
+  let fourthNumber;
+  let fifthNumber;
+  let sixthNumber;
+  generateNumbers();
+
   console.log(firstNumber);
-  let secondNumber = numberTwo();
   console.log(secondNumber);
-  let thirdNumber = numberThree();
   console.log(thirdNumber);
-  let fourthNumber = numberFour();
   console.log(fourthNumber);
-  let fifthNumber = numberFive();
   console.log(fifthNumber);
-  let sixthNumber = numberSix();
   console.log(sixthNumber);
 
   let numbers = `Your Lucky Lottery Numbers Are<br>${firstNumber} - ${secondNumber} - ${thirdNumber} - ${fourthNumber} - ${fifthNumber} - ${sixthNumber}`;
@@ -121,6 +123,30 @@ function generateLotteryNumber() {
   message.style.display = 'block';
   message.innerHTML = numbers;
   window.scrollTo(0, document.body.scrollHeight);
+
+  // Generate and make sure there are no duplicates
+  function generateNumbers() {
+    let lotteryNumbersArr;
+    let lotteryNumbersSet;
+    do {
+      lotteryNumbersArr = [];
+      firstNumber = numberOne();
+      secondNumber = numberTwo();
+      thirdNumber = numberThree();
+      fourthNumber = numberFour();
+      fifthNumber = numberFive();
+      sixthNumber = numberSix();
+      lotteryNumbersArr.push(
+        firstNumber,
+        secondNumber,
+        thirdNumber,
+        fourthNumber,
+        fifthNumber,
+        sixthNumber
+      );
+      lotteryNumbersSet = [...new Set(lotteryNumbersArr)];
+    } while (lotteryNumbersSet.length < 6);
+  }
 }
 
 window.onload = () => {
